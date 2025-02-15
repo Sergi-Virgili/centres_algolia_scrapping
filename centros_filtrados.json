@@ -1,0 +1,297 @@
+[
+    {
+        "chunk": 1,
+        "chunks": 1,
+        "idCentre": "97361",
+        "data": {
+            "codiEntitat": "28916",
+            "raoSocial": "APTIBUS, SL",
+            "cif": "B65471252",
+            "numCens": "4130",
+            "email": "aptibus@aptibus.com",
+            "web": "aptibus.com",
+            "idCentre": "97361",
+            "codiCentre": "0804130005",
+            "carrer": "Carrer A ZONA FRANCA",
+            "comarca": "BARCELONÈS",
+            "cp": "08040",
+            "municipi": "BARCELONA",
+            "provincia": "BARCELONA",
+            "telefon": "932629014",
+            "lat": "0",
+            "lng": "0",
+            "numCursos": 3,
+            "esCifo": "N",
+            "perDiscapacitats": "N"
+        },
+        "especialitat": [
+            {
+                "codi": "FCOO03",
+                "desc": {
+                    "cat": "FCOO03 - Inserció laboral, sensibilització mediambiental i en la igualtat de gènere",
+                    "cas": "FCOO03 - Inserció laboral, sensibilització mediambiental i en la igualtat de gènere"
+                },
+                "area": {
+                    "codi": "FCOO",
+                    "desc": {
+                        "cat": "FCOO - ORIENTACIÓ LABORAL",
+                        "cas": "FCOO - ORIENTACIÓN LABORAL"
+                    }
+                },
+                "certProf": "N",
+                "cursos": [],
+                "codOcupacio": [],
+                "famProf": {
+                    "codi": "FCO",
+                    "desc": {
+                        "cat": "FCO - FORMACIÓ COMPLEMENTARIA",
+                        "cas": "FCO - FORMACIÓN COMPLEMENTARIA"
+                    }
+                }
+            },
+            {
+                "codi": "FCOO15",
+                "desc": {
+                    "cat": "FCOO15 - Aproximació a l'entorn laboral en un sector professional",
+                    "cas": "FCOO15 - Aproximació a l'entorn laboral en un sector professional"
+                },
+                "area": {
+                    "codi": "FCOO",
+                    "desc": {
+                        "cat": "FCOO - ORIENTACIÓ LABORAL",
+                        "cas": "FCOO - ORIENTACIÓN LABORAL"
+                    }
+                },
+                "certProf": "N",
+                "cursos": [
+                    {
+                        "certificat": "N",
+                        "idCursIntern": "439798",
+                        "codi": "24/ATCC1/711/0188765/009",
+                        "dataFin": "14/03/2025",
+                        "dataInici": "13/03/2025",
+                        "desc": {
+                            "cat": "Aproximació a l'entorn laboral en un sector professional",
+                            "cas": "Aproximació a l'entorn laboral en un sector professional"
+                        },
+                        "hores": "10",
+                        "inscripcio": "S",
+                        "modalitat": {
+                            "cat": "Formació ocupacional",
+                            "cas": "Formación ocupacional"
+                        },
+                        "esCifo": "N",
+                        "perDiscapacitats": "N"
+                    }
+                ],
+                "codOcupacio": [],
+                "famProf": {
+                    "codi": "FCO",
+                    "desc": {
+                        "cat": "FCO - FORMACIÓ COMPLEMENTARIA",
+                        "cas": "FCO - FORMACIÓN COMPLEMENTARIA"
+                    }
+                }
+            },
+            {
+                "codi": "TMVI58",
+                "desc": {
+                    "cat": "TMVI58 - Programa de qualificació inicial accelerada amb sensibilització i educació viària, tacògraf digital i atenció i informació als viatgers (Viatgers)",
+                    "cas": "TMVI58 - Programa de qualificació inicial accelerada amb sensibilització i educació viària, tacògraf digital i atenció i informació als viatgers (Viatgers)"
+                },
+                "area": {
+                    "codi": "TMVI",
+                    "desc": {
+                        "cat": "TMVI - Conducció de vehicles per carretera",
+                        "cas": "TMVI - Conducció de vehicles per carretera"
+                    }
+                },
+                "certProf": "N",
+                "cursos": [
+                    {
+                        "certificat": "N",
+                        "idCursIntern": "439804",
+                        "codi": "24/ATCC1/711/0188765/010",
+                        "dataFin": "17/04/2025",
+                        "dataInici": "17/03/2025",
+                        "desc": {
+                            "cat": "Programa de qualificació inicial accelerada amb sensibilització i educació viària, tacògraf digital i atenció i informació als viatgers (Viatgers)",
+                            "cas": "Programa de qualificació inicial accelerada amb sensibilització i educació viària, tacògraf digital i atenció i informació als viatgers (Viatgers)"
+                        },
+                        "hores": "140",
+                        "inscripcio": "S",
+                        "modalitat": {
+                            "cat": "Formació ocupacional",
+                            "cas": "Formación ocupacional"
+                        },
+                        "esCifo": "N",
+                        "perDiscapacitats": "N"
+                    }
+                ],
+                "codOcupacio": [],
+                "famProf": {
+                    "codi": "TMV",
+                    "desc": {
+                        "cat": "TMV - TRANSPORT I MANTENIMENT DE VEHICLES",
+                        "cas": "TMV - TRANSPORTE Y MANTENIMIENTO DE VEHÍCULOS"
+                    }
+                }
+            },
+            {
+                "codi": "TMVI64",
+                "desc": {
+                    "cat": "TMVI64 - Formació per a l' accés a les proves del permís de conducció classe D.",
+                    "cas": "TMVI64 - Formació per a l' accés a les proves del permís de conducció classe D."
+                },
+                "area": {
+                    "codi": "TMVI",
+                    "desc": {
+                        "cat": "TMVI - Conducció de vehicles per carretera",
+                        "cas": "TMVI - Conducció de vehicles per carretera"
+                    }
+                },
+                "certProf": "N",
+                "cursos": [
+                    {
+                        "certificat": "N",
+                        "idCursIntern": "439805",
+                        "codi": "24/ATCC1/711/0188765/011",
+                        "dataFin": "21/05/2025",
+                        "dataInici": "22/04/2025",
+                        "desc": {
+                            "cat": "Formació per a l' accés a les proves del permís de conducció classe D.",
+                            "cas": "Formació per a l' accés a les proves del permís de conducció classe D."
+                        },
+                        "hores": "345",
+                        "inscripcio": "S",
+                        "modalitat": {
+                            "cat": "Formació ocupacional",
+                            "cas": "Formación ocupacional"
+                        },
+                        "esCifo": "N",
+                        "perDiscapacitats": "N"
+                    }
+                ],
+                "codOcupacio": [],
+                "famProf": {
+                    "codi": "TMV",
+                    "desc": {
+                        "cat": "TMV - TRANSPORT I MANTENIMENT DE VEHICLES",
+                        "cas": "TMV - TRANSPORTE Y MANTENIMIENTO DE VEHÍCULOS"
+                    }
+                }
+            }
+        ],
+        "objectID": "97361",
+        "_highlightResult": {
+            "data": {
+                "raoSocial": {
+                    "value": "APTIBUS, SL",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                },
+                "cif": {
+                    "value": "B65471252",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                },
+                "numCens": {
+                    "value": "4130",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                },
+                "codiCentre": {
+                    "value": "0804130005",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                }
+            },
+            "especialitat": [
+                {
+                    "desc": {
+                        "cat": {
+                            "value": "FCOO03 - Inserció laboral, sensibilització mediambiental i en la igualtat de gènere",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        },
+                        "cas": {
+                            "value": "FCOO03 - Inserció laboral, sensibilització mediambiental i en la igualtat de gènere",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        }
+                    },
+                    "famProf": {
+                        "codi": {
+                            "value": "FCO",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        }
+                    }
+                },
+                {
+                    "desc": {
+                        "cat": {
+                            "value": "FCOO15 - Aproximació a l'entorn laboral en un sector professional",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        },
+                        "cas": {
+                            "value": "FCOO15 - Aproximació a l'entorn laboral en un sector professional",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        }
+                    },
+                    "famProf": {
+                        "codi": {
+                            "value": "FCO",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        }
+                    }
+                },
+                {
+                    "desc": {
+                        "cat": {
+                            "value": "TMVI58 - Programa de qualificació inicial accelerada amb sensibilització i educació viària, tacògraf digital i atenció i informació als viatgers (Viatgers)",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        },
+                        "cas": {
+                            "value": "TMVI58 - Programa de qualificació inicial accelerada amb sensibilització i educació viària, tacògraf digital i atenció i informació als viatgers (Viatgers)",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        }
+                    },
+                    "famProf": {
+                        "codi": {
+                            "value": "TMV",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        }
+                    }
+                },
+                {
+                    "desc": {
+                        "cat": {
+                            "value": "TMVI64 - Formació per a l' accés a les proves del permís de conducció classe D.",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        },
+                        "cas": {
+                            "value": "TMVI64 - Formació per a l' accés a les proves del permís de conducció classe D.",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        }
+                    },
+                    "famProf": {
+                        "codi": {
+                            "value": "TMV",
+                            "matchLevel": "none",
+                            "matchedWords": []
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]
