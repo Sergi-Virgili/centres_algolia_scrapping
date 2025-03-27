@@ -43,7 +43,7 @@ def extract_adress(data: List[str]) -> str:
 
 def extract_email(data: List[str]) -> str:
     try:
-        link = data[15].find("a")
+        link = data[15].text.strip()
         if link and "mailto:" in link.get("href", ""):
             return link.text.strip()
         return "No email found"
@@ -76,7 +76,7 @@ def extract_horari(data: List[str]) -> str:
     except Exception as e:
         return "Sense horari especificat"
 
-for i in range(1, 400):
+for i in range(256, 256):
     url = "https://entitatsjuvenilsbcn.cat/cens_entitats/cens3.php?id=" + str(i)
     data = get_data(url)
     
