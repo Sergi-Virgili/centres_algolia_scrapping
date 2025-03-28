@@ -41,14 +41,39 @@ def extract_adress(data: List[str]) -> str:
 # print(data[4].text)
 
 
+# def extract_email(data: List[str]) -> str:
+#     try:
+#         link = data[15].find("a")
+#         if link and "mailto:" in link.get("href", ""):
+#             return link.text.strip()
+#         return "No email found"
+#     except Exception as e:
+#         return "No email found"
+def get_info_table(data):
+    for td in data:
+        table = td.find("table")
+        if table:
+            return table.find_all("tr")
+    return None
+
+def get_tr_by_label(rows, label: str):
+    for tr in rows:
+        tds = tr.find_all("td")
+        if len(tds) >= 2 and label in tds[0].text:
+            return tr
+    return None
+
 def extract_email(data: List[str]) -> str:
-    try:
-        link = data[15].text.strip()
-        if link and "mailto:" in link.get("href", ""):
-            return link.text.strip()
-        return "No email found"
-    except Exception as e:
-        return "No email found"
+    return extract_field_by_label(get_info_table(data), "E-mail")
+
+def extract_field_by_label(rows, label: str) -> str:
+    for tr in rows:
+        tds = tr.find_all("td")
+        if len(tds) >= 2 and label in tds[0].text:
+            second_td = tds[1]
+            # Si hay un <a>, lo usamos; si no, devolvemos el texto plano
+            return second_td.get_text(strip=True)
+    return f"{label} not found"
 
 def extract_web(data: List[str]) -> str:
     try:
@@ -59,14 +84,9 @@ def extract_web(data: List[str]) -> str:
     except Exception as e:
         return "No web found"
 
-def extract_telefon(data: List[str]) -> str:
-    try:
-        telefon = data[13].text.strip()
-        if telefon:
-            return telefon
-        return "No phone found"
-    except Exception as e:
-        return "No phone found"
+
+    
+
 def extract_horari(data: List[str]) -> str:
     try:
         horari = data[11].text.strip()
@@ -76,36 +96,46 @@ def extract_horari(data: List[str]) -> str:
     except Exception as e:
         return "Sense horari especificat"
 
-for i in range(256, 256):
+def escribir_cabecera():
+    with open("entitats_juvenils.csv", "w", encoding="utf-8") as f:
+        # Escribir encabezados
+        f.write("id$Name$Adress$Categoria$Tipologia$Districte$Barri$Horari$Tel$Email$Web\n")
+
+def convert_jsonToCsv(item):
+    with open("entitats_juvenils.csv", "a", encoding="utf-8") as f:
+        f.write(f"{item['id']}${item['Name']}${item['Adress']}${item['Categoria']}${item['Tipologia']}${item['Districte']}${item['Barri']}${item['Horari']}${item['Tel']}${item['Email']}${item['Web']}\n")
+
+
+# escribir_cabecera()
+
+for i in range(3000, 4000):
     url = "https://entitatsjuvenilsbcn.cat/cens_entitats/cens3.php?id=" + str(i)
     data = get_data(url)
     
     if len(data) == 0 or data[0].text == "No hi ha dades per aquest ID":
         print("No data found for ID:", i)
+        time.sleep(1)
+        continue
+
+    if extact_name(data) == "":
+        print("No name found for ID:", i)
+        time.sleep(1)
         continue
 
     json_data = {
         "id": i,
         "Name": extact_name(data),
         "Adress": extract_adress(data),
-        # "Categoría": data[5].text,
-        # "Tipologia": data[3].text,
-        # "Districte": data[7].text,
-        # "Barrio": data[9].text,
-        "Horari": extract_horari(data),
-        "Telèfon": extract_telefon(data),
+        "Categoria": extract_field_by_label(get_info_table(data), "Categoria"),
+        "Tipologia": extract_field_by_label(get_info_table(data), "Tipologia"),
+        "Districte": extract_field_by_label(get_info_table(data), "Districte"),
+        "Barri": extract_field_by_label(get_info_table(data), "Barri"),
+        "Horari": extract_field_by_label(get_info_table(data), "Horari"),
+        "Tel": extract_field_by_label(get_info_table(data), "Tel."),
         "Email": extract_email(data),
-        "Web": extract_web(data),
+        "Web": extract_field_by_label(get_info_table(data), "Web"),
     }
     print(json_data)
-    json_result.append(json_data)
+    convert_jsonToCsv(json_data)
     time.sleep(1) # Pausa de 0.5 segons entre peticions
 
-def convert_jsonToCsv(json_result):
-    with open("entitats_juvenils.csv", "w", encoding="utf-8") as f:
-        # Escribir encabezados
-        f.write("id$Name$Adress$Horari$Telèfon$Email$Web\n")
-        for item in json_result:
-            f.write(f"{item['id']}${item['Name']}${item['Adress']}${item['Horari']}${item['Telèfon']}${item['Email']}${item['Web']}\n")
-
-convert_jsonToCsv(json_result)
