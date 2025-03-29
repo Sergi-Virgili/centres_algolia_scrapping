@@ -3,23 +3,15 @@ import json, time
 from bs4 import BeautifulSoup
 from typing import List
 
-# for i in range(1, 400):
-#     url = "https://entitatsjuvenilsbcn.cat/cens_entitats/cens3.php?id=" + str(i)
-#     print(url)
 
 json_result = []
-    
-# url2 = "https://entitatsjuvenilsbcn.cat/cens_entitats/cens3.php?id=1"
+
 
 def get_data(url: str) -> List[str]:
-    res = requests.get(url, timeout=5)  # ⏱️ timeout de 5 segundos
+    res = requests.get(url, timeout=5) 
     soup = BeautifulSoup(res.text, "html.parser")
     data = soup.find_all("td")
     return data
-
-
-# data = get_data(url2)
-# print(data)
 
 def extact_name(data: List[str]) -> str:
     return data[0].td.text
@@ -27,28 +19,11 @@ def extact_name(data: List[str]) -> str:
 def extract_adress(data: List[str]) -> str:
     for td in data:
         if "Adreça" in td.text:
-            # Extraer el contenido después de "Adreça"
             address_parts = td.decode_contents().split("<br/>")
             address = " ".join(part.strip() for part in address_parts if "Adreça" not in part and "Veure a Google Maps" not in part)
             return address.strip()
     return "Address not found"
 
-# for i in range(1, 20):
-#     print(str(i) + " " + data[i].text)
-
-# print(extact_name(data))
-# print(extract_adress(data))
-# print(data[4].text)
-
-
-# def extract_email(data: List[str]) -> str:
-#     try:
-#         link = data[15].find("a")
-#         if link and "mailto:" in link.get("href", ""):
-#             return link.text.strip()
-#         return "No email found"
-#     except Exception as e:
-#         return "No email found"
 def get_info_table(data):
     for td in data:
         table = td.find("table")
@@ -84,8 +59,6 @@ def extract_web(data: List[str]) -> str:
     except Exception as e:
         return "No web found"
 
-
-    
 
 def extract_horari(data: List[str]) -> str:
     try:
